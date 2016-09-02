@@ -1,0 +1,13 @@
+// Small Bootstrap - sBootstrap
+// A very minimalistic bootstrap design for the Advanced Web Design course
+// Vladica Jovanovski, 2016, FINKI
+
+// A small grid framework which can be easily modified. Please take a look at the variables file.
+// You can easily change the number of columns, the container size for different screens, the column gutter and etc.
+
+// Minimalistic design which utilize the Compass library.
+// Please take a look at variables and style file.
+
+@import "variables";
+@import "grid";
+@import "style";

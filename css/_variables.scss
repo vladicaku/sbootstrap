@@ -1,0 +1,49 @@
+// Variables for media screen queries
+$screen-xs: 480px;
+$screen-xs-min: $screen-xs;
+
+
+$screen-sm: 768px;
+$screen-sm-min: $screen-sm;
+
+$screen-md: 992px;
+$screen-md-min: $screen-md;
+
+$screen-lg: 1200px;
+$screen-lg-min: $screen-lg;
+
+// Make sure the queries do not overlap
+$screen-xs-max: $screen-sm-min - 1;
+$screen-sm-max: $screen-md-min - 1;
+$screen-md-max:  $screen-lg-min - 1;
+
+// Container sizes
+$container-sm: 740px;
+$container-md: 960px;
+$container-lg: 1160px;
+
+// Grid specific variables
+$grid-columns: 12;
+$column-gutter: 12px;
+$column-width: 1 / $grid-columns;
+
+// Colors
+$base-color-1: #7bae23;
+$base-color-2: #84bb26; // na header duginja
+
+
+$text-color: #7c807e;
+
+$navigation-color-default: #494940;
+$filter-color-default: #575a59;
+$discount-color: #c72929;
+$price-color: #a8bf00;
+
+$review-color: #f6f6f6;
+
+$base-color-gray-1: #a4a4a4;
+$base-color-gray-2: rgb(224, 224, 224);
+$base-color-gray-3: #f7f7f7;
+
+$footer-heading-color: #e3e3e3;
+$footer-paragraph-color: #ccc;
