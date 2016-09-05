@@ -27,9 +27,12 @@ $grid-columns: 12;
 $column-gutter: 12px;
 $column-width: 1 / $grid-columns;
 
+// Distance between rows
+$row-distance: 15px;
+
 // Colors
 $base-color-1: #7bae23;
-$base-color-2: #84bb26; // na header duginja
+$base-color-2: #84bb26; // na header dugminja
 
 
 $text-color: #7c807e;

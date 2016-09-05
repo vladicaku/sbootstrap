@@ -5,6 +5,7 @@ body {
 
 .container {
   margin: auto;
+  overflow: hidden;
 
   @media all and (max-width: $screen-xs-max) {
     width: 100%;
@@ -27,6 +28,11 @@ body {
   content:"";
   display: block ;
   clear:both;
+}
+
+.row {
+  overflow: hidden;
+  margin-bottom: $row-distance;
 }
 
 // Extending placeholder in different media queries is not supported
@@ -54,6 +60,13 @@ body {
   }
 }
 
+@mixin make-hidden($class) {
+  .hidden-#{$class} {
+    display: none !important;
+  }
+}
+
+/* Generate col classes */
 // The XS grid should work for all screen sizes
 //@media all and (max-width: $screen-xs-max) {
 @include make-grid(xs);
@@ -71,7 +84,34 @@ body {
   @include make-grid(lg);
 }
 
-// Some useful classes
+/* Generate hidden classes */
+@media all and (max-width: $screen-xs-max) {
+  @include make-hidden(xs)
+}
+
+@media all and (min-width: $screen-sm-min) {
+  @include make-hidden(sm)
+}
+
+@media all and (min-width: $screen-md-min) {
+  @include make-hidden(md)
+}
+
+@media all and (min-width: $screen-lg-min) {
+  @include make-hidden(lg)
+}
+
+/* Default topology margins */
+.topology {
+  margin: 0px !important;
+  margin-bottom: 15px !important;
+}
+
+h1, h2, h3, h4, h5, p {
+  @extend .topology;
+}
+
+/* Some useful classes */
 .pull-left {
   float: left;
 }
@@ -84,7 +124,7 @@ body {
   margin: auto;
 }
 
-// Text
+/* Text */
 .text-center {
   text-align: center;
 }
@@ -113,7 +153,6 @@ body {
   text-transform: capitalize;
 }
 
-// Test
 .text-small {
   font-size: small;
 }
@@ -156,4 +195,11 @@ body {
 
 .text-italic {
   font-style: italic;
+}
+
+/* Responsive image */
+.img-responsive {
+  max-width: 100%;
+  display:block;
+  height: auto;
 }

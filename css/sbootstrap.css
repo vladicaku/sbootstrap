@@ -3,7 +3,8 @@ body {
   padding: 0; }
 
 .container {
-  margin: auto; }
+  margin: auto;
+  overflow: hidden; }
   @media all and (max-width: 767px) {
     .container {
       width: 100%; } }
@@ -22,6 +23,11 @@ body {
   display: block;
   clear: both; }
 
+.row {
+  overflow: hidden;
+  margin-bottom: 15px; }
+
+/* Generate col classes */
 .col-xs-1 {
   float: left;
   padding: 0 12px;
@@ -358,6 +364,25 @@ body {
     min-height: 1px;
     box-sizing: border-box;
     width: 100%; } }
+/* Generate hidden classes */
+@media all and (max-width: 767px) {
+  .hidden-xs {
+    display: none !important; } }
+@media all and (min-width: 768px) {
+  .hidden-sm {
+    display: none !important; } }
+@media all and (min-width: 992px) {
+  .hidden-md {
+    display: none !important; } }
+@media all and (min-width: 1200px) {
+  .hidden-lg {
+    display: none !important; } }
+/* Default topology margins */
+.topology, h1, h2, h3, h4, h5, p {
+  margin: 0px !important;
+  margin-bottom: 15px !important; }
+
+/* Some useful classes */
 .pull-left {
   float: left; }
 
@@ -367,6 +392,7 @@ body {
 .center-block, .product .images img {
   margin: auto; }
 
+/* Text */
 .text-center, .product .name, .product .price, .product .tag-new, .product .tag-discount {
   text-align: center; }
 
@@ -421,6 +447,14 @@ body {
 .text-italic {
   font-style: italic; }
 
+/* Responsive image */
+.img-responsive {
+  max-width: 100%;
+  display: block;
+  height: auto; }
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
 body {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif; }
 
@@ -445,16 +479,22 @@ p {
   -ms-transition: none !important;
   -o-transition: none !important; }
 
+/* ------------------------------------------------------------- */
 header {
-  margin: 15px 0 10px 0; }
+  margin-top: 20px; }
   header .header-contact {
-    margin-left: 10px;
+    box-sizing: border-box;
     padding: 0px 10px;
     background-color: #f7f7f7;
     border: 1px solid #e0e0e0; }
+    header .header-contact p {
+      margin: 10px 0 !important; }
 
 .navigation {
   overflow: hidden; }
+  .navigation .border {
+    margin-top: 15px;
+    border-bottom: 3px solid #7bae23; }
   .navigation nav {
     overflow: hidden; }
     .navigation nav ul {
@@ -468,11 +508,11 @@ header {
         padding: 0;
         overflow: hidden; }
         .navigation nav ul li a {
-          height: 27px;
-          line-height: 27px;
+          font-size: 18px;
+          height: 28px;
+          line-height: 28px;
           padding: 0px 20px;
           margin: 0;
-          display: inline-block;
           color: #494940;
           text-decoration: none;
           font-weight: bold;
@@ -481,42 +521,43 @@ header {
           .navigation nav ul li a:hover {
             color: #7bae23;
             transition: color 300ms; }
-    .navigation nav #search-box {
-      display: inline-block;
-      height: 25px;
-      padding: 0px 5px;
-      line-height: 25px;
-      color: #a4a4a4;
-      border: 1px solid #e0e0e0;
-      vertical-align: top;
-      outline: none; }
-      .navigation nav #search-box::selection {
-        background: #84bb26;
-        color: #FFFFFF; }
-      .navigation nav #search-box::-moz-selection {
-        background: #84bb26;
-        color: #FFFFFF; }
-    .navigation nav #search-button, .navigation nav #cart-button {
-      display: inline-block;
-      height: 28px;
-      line-height: 28px;
-      margin: 0;
-      padding: 0 9px;
-      vertical-align: top;
-      background-color: #7bae23;
-      color: #FFFFFF;
-      text-decoration: none;
-      transition: background-color 300ms; }
-      .navigation nav #search-button:hover, .navigation nav #cart-button:hover {
-        background-color: #84bb26; }
+  .navigation #search-box {
+    display: inline-block;
+    height: 26px;
+    padding: 0px 5px;
+    line-height: 26px;
+    color: #a4a4a4;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    outline: none; }
+    .navigation #search-box::selection {
+      background: #84bb26;
+      color: #FFFFFF; }
+    .navigation #search-box::-moz-selection {
+      background: #84bb26;
+      color: #FFFFFF; }
+  .navigation #search-button, .navigation #cart-button {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    margin: 0;
+    padding: 0 9px;
+    vertical-align: top;
+    background-color: #7bae23;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: background-color 300ms; }
+    .navigation #search-button:hover, .navigation #cart-button:hover {
+      background-color: #84bb26; }
 
+/* ------------------------------------------------------------- */
 .filter ul {
   margin: 0;
   padding: 0;
   overflow: hidden; }
   .filter ul li {
     float: left;
-    margin: 0 5px 0 0;
+    margin: 0 5px 5px 0;
     padding: 0;
     overflow: hidden; }
     .filter ul li a {
@@ -531,6 +572,7 @@ header {
       .filter ul li a.active {
         background-color: #7bae23; }
 
+/* ------------------------------------------------------------- */
 .product {
   position: relative;
   height: 460px;
@@ -577,19 +619,18 @@ header {
     top: 405px;
     width: 100%; }
   .product .add-to-cart-button {
-    height: 35px;
     padding: 10px;
-    line-height: 35px;
-    color: #e8e8e8;
-    background-color: #575a59;
-    border: 1px solid #5c5f5e;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    height: 35px;
     border-radius: 3px;
-    text-transform: uppercase;
+    border: 1px solid #5c5f5e;
+    background-color: #575a59;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
     transition: background-color .4s;
     -webkit-transition: background-color .4s;
     -moz-transition: background-color .4s;
     vertical-align: top;
+    color: #e8e8e8;
+    line-height: 35px;
     text-decoration: none; }
     .product .add-to-cart-button:hover {
       background-color: #7bae23;
@@ -610,6 +651,7 @@ header {
   .product .tag-discount {
     background-color: #c72929; }
 
+/* ------------------------------------------------------------- */
 .subscribe {
   padding: 10px;
   border: 1px solid #e0e0e0; }
@@ -644,11 +686,12 @@ header {
     .subscribe .subscribe-button:hover {
       background-color: #84bb26; }
 
+/* ------------------------------------------------------------- */
 .review {
   margin-top: 20px;
   color: #7c807e; }
   .review .review-section {
-    padding: 10px;
+    padding: 15px 15px 0 15px;
     border: 1px solid #e0e0e0;
     background-color: #f6f6f6; }
     .review .review-section .review-heading {
@@ -656,13 +699,18 @@ header {
       padding: 0;
       margin-top: 5px; }
   .review .review-user {
-    margin-top: 10px; }
+    margin-top: 15px; }
+    .review .review-user p {
+      margin-bottom: 5px !important; }
 
+/* ------------------------------------------------------------- */
 footer #twitter {
-  padding: 20px 0;
+  padding-top: 15px;
+  overflow: hidden;
   background-color: #84bb26;
   color: #444645 !important; }
   footer #twitter p {
+    margin: 0 !important;
     color: #444645 !important; }
 footer #footer-inner {
   background-color: #444645;
@@ -670,7 +718,7 @@ footer #footer-inner {
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1); }
   footer #footer-inner #footer-top {
-    padding: 15px 0 50px 0; }
+    padding: 25px 0 0 0 !important; }
     footer #footer-inner #footer-top h3 {
       color: #e3e3e3 !important; }
     footer #footer-inner #footer-top ul {
@@ -694,13 +742,15 @@ footer #footer-inner {
       border: none;
       height: 210px; }
   footer #footer-inner #footer-bottom {
-    padding: 10px 0;
+    overflow: hidden;
     border-top: 1px solid #383938;
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1); }
     footer #footer-inner #footer-bottom p {
+      margin: 15px 0 0 0 !important;
       color: #cccccc !important; }
 
+/* ------------------------------------------------------------- */
 .heading {
   margin: 0;
   padding: 0;
