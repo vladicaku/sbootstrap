@@ -3,3 +3,7 @@ Small Bootstrap implementation in SASS. **Vendor Magento Theme** is implemented 
 
 ## Grid
 Bootstrap like responsive grid system. You can change the column number, width and distance in the variables file.
+
+## Screenshot
+![Screenshot](/img/screenshot.png?raw=true "Screenshot")
+
