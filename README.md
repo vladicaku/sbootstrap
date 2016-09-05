@@ -7,8 +7,8 @@ Bootstrap like responsive grid system. You can change the column number, width a
 Some of the features:
 + col-xs, col-sm, col-md, col-lg
 + hiddens-xs, hidden-sm ...
-+ pull-left, pull-right, center-block
-+ text-center, text-left, text-justified, text-lowercase, text-small, text-smaller, text-x-small
++ pull-left, pull-right, center-block ...
++ text-center, text-left, text-justified, text-lowercase, text-small, text-smaller, text-x-small ...
 + text-bold, text-italic, text-indent
 + img-responsive
 
